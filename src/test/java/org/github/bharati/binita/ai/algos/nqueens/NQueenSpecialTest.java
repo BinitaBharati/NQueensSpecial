@@ -59,7 +59,10 @@ public class NQueenSpecialTest {
 				Coordinate tmp = queenPositions.get(i);
 				if (!input.equals(tmp)) {
 					double slope = getSlope(input, tmp);
-					if (slope != 1) {
+					if (slope == 1) {
+						return false;
+					}
+					else {
 						List<Coordinate> coordList = new ArrayList<>();
 						coordList.add(input);
 						Line testLine = new Line(coordList, slope);
